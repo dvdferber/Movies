@@ -46,7 +46,6 @@ const getNameAndDataBYMovieId = (subscrptions, members,  movieId) =>{
     subscrptions.forEach(subs => {
         let relevantMovie = subs.movies.filter(movie => movie.movieId === movieId)
         if(relevantMovie.length > 0){
-            
             let memberName = members.filter(member => member._id === subs.memberId)
             let insertDate = relevantMovie[0].date? relevantMovie[0].date.slice(0,10) : '';
             let Name = memberName[0]? memberName[0].name: '';
