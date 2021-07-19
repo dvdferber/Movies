@@ -1,5 +1,6 @@
 const express = require('express')
-const DALsubscription = require('D:/FS/FinalProject-Movies/Servers/ServerSide-Cinema/dataMenipulation/subscriptionDALs/SubsctiptionDAL')
+let b = 'D:/FS/FinalProject-Movies/Servers/ServerSide-Cinema/dataMenipulation/subscriptionDALs/SubsctiptionDAL'
+const DALsubscription = require('../../dataMenipulation/subscriptionDALs/SubsctiptionDAL')
 const router = express.Router()
 
 router.route('/').get(async(req, resp) => {

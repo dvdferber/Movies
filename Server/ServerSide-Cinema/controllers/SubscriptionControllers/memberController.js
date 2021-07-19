@@ -1,5 +1,6 @@
 const express = require('express')
-const MemberDAL = require('D:/FS/FinalProject-Movies/Servers/ServerSide-Cinema/dataMenipulation/subscriptionDALs/MemberDAL')
+let b = 'D:/FS/FinalProject-Movies/Servers/ServerSide-Cinema/dataMenipulation/subscriptionDALs/MemberDAL'
+const MemberDAL = require('../../dataMenipulation/subscriptionDALs/MemberDAL')
 const router = express.Router()
 
 
