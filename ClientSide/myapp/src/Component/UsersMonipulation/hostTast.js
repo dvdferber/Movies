@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import UsresComp from './UsersComp'
 import CreateUserComp from './CreateUserComp'
 import EditUsersComp from './EditUsers'
@@ -8,6 +8,7 @@ import './Users.css'
 
 function HostComp() {
     const history = useHistory()
+    const [userPremission] = useState(JSON.parse(localStorage.getItem('allUserInfo')))
 
     const showAllUsers = () =>{
         history.push('/main/users')
@@ -19,8 +20,8 @@ function HostComp() {
     return (
         <div className='user-router-menu'>
             <div className='nav-users-btn'>
-            <input className='btn-menu-in-comp' type='button' value='All users'onClick={showAllUsers}/>
-            <input className='btn-menu-in-comp' type='button' value='Add user' onClick={addUser}/><br/>
+            {userPremission.premissions.Admin && <input className='btn-menu-in-comp' type='button' value='All users'onClick={showAllUsers}/>}
+            {userPremission.premissions.Admin && <input className='btn-menu-in-comp' type='button' value='Add user' onClick={addUser}/>}<br/>
             </div>
             <Switch>
                 <Route exact path='/main/users' component={UsresComp}/>

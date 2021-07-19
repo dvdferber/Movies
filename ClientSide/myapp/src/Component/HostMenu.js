@@ -21,6 +21,7 @@ const MenuComp = (props) =>{
             setAllUserInfo(data)
             localStorage.setItem('allUserInfo', JSON.stringify(data))
             let timeOut = setTimeout(() => {
+                alert('Is time to log out')
                 props.history.push('/')
                 localStorage.clear()
             }, data.sessionTimeOut * 60000)

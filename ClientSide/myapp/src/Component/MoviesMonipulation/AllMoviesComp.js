@@ -27,12 +27,12 @@ const AllMoviesComp = (props) =>{
             }
         }
         if(unmouted){
-            getMovies()
+            userPremission.premissions.View_Movies && getMovies()
         }
         return  ()=>{
             unmouted = false
         }
-    },[props.match.params.id, reloudeCounter])
+    },[props.match.params.id, reloudeCounter, userPremission])
 
     const setInputFromSearch = (input)=>{
         setSearchValue(input)

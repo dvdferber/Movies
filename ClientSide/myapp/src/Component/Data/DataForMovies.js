@@ -49,8 +49,11 @@ const getNameAndDataBYMovieId = (subscrptions, members,  movieId) =>{
             
             let memberName = members.filter(member => member._id === subs.memberId)
             let insertDate = relevantMovie[0].date? relevantMovie[0].date.slice(0,10) : '';
-            !relevantMovie[0].date && console.log(relevantMovie[0]);
-            dataToReturn.push({date : insertDate, name: memberName[0].name})
+            let objToReturn = {
+                date : insertDate, 
+                name: memberName[0]? memberName[0].name : ""
+            }
+            dataToReturn.push(objToReturn)
         }
     })
     return dataToReturn
