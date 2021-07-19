@@ -91,5 +91,8 @@ body{
 }
 .require-mgs{
     color:  red; 
+    border: 0.5px solid red;
     font-size: 14px;
+    background-color: whitesmoke;
+    border-radius: 2px;
 }

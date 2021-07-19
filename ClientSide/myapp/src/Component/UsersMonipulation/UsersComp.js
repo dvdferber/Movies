@@ -12,7 +12,8 @@ const UsresComp = (props) =>{
         let unmonted = false
         const getData = async()=>{
             let data =  await clearUserData()// function in utils file
-            setUsers(data)
+            let anlySimpleUsers = data.filter(user => !user.permissions.includes('Admin'))
+            setUsers(anlySimpleUsers)
         }
         if(!unmonted){
             userPremission.premissions.Admin && getData()

@@ -41,7 +41,6 @@ const AddANewMovie = (props) =>{
     }
     const insertMovieData =(e)=>{
         let data = e.target.value
-        console.log(e.target.value);
         // sometime the compiler return string with a lot of \
         let movieIdAndDate = data.replace(/\\/g, '')
         data = JSON.parse(movieIdAndDate)
